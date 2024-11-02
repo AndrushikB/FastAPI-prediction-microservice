@@ -1,24 +1,33 @@
 import requests
 import time
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+MAIN_APP_PORT = os.getenv("APP_PORT")
 
 # отправляем на сервис запросы
 for i in range(40):
     flat_id = i
     model_params = {
-          "num__spl__latitude_sp_1": random.uniform(0, 0.9),
-          "num__spl__longitude_sp_4": random.uniform(0, 0.9),
-          "num__spl__longitude_sp_0": random.uniform(0, 0.9),
-          "num__spl__latitude_sp_5": random.uniform(0, 0.9),
-          "building_id": 19350,
-          "num__pol__total_area ceiling_height": random.uniform(100, 250),
-          "num__spl__latitude_sp_0": random.uniform(0, 0.9),
-          "num__spl__latitude_sp_4": random.uniform(0, 0.9),
-          "num__spl__longitude_sp_1": random.uniform(0, 0.9),
-          "floor": random.randrange(1, 30)
+          "build_year": random.randrange(1900, 2020),
+          "building_type_int": random.randrange(0, 6),
+          "latitude": random.uniform(55.0, 55.9),
+          "longitude": random.uniform(37.0, 37.9),
+          "ceiling_height": random.uniform(2.5, 3),
+          "flats_count": random.randrange(1, 500),
+          "floors_total": random.uniform(1, 30),
+          "has_elevator": bool(random.getrandbits(1)),
+          "floor": random.randrange(1, 30),
+          "kitchen_area": random.uniform(5, 15),
+          "living_area": random.uniform(15, 100),
+          "rooms": random.randrange(1, 7),
+          "is_apartment": bool(random.getrandbits(1)),
+          "total_area": random.uniform(20, 115)
       }
 
-    response = requests.post(f'http://localhost:8081/api/flats/?flat_id={flat_id}', json=model_params)
+    response = requests.post(f'http://localhost:{MAIN_APP_PORT}/api/flats/?flat_id={flat_id}', json=model_params)
     
     # на 30 запросе перерыв 30 секунд
     if i == 30:

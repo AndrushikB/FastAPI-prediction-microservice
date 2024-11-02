@@ -27,16 +27,20 @@ curl -X 'POST' \
   'http://localhost:8081/api/flats/?flat_id=123' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{          "num__spl__latitude_sp_1": 0.196077,
-          "num__spl__longitude_sp_4": 0.002689,
-          "num__spl__longitude_sp_0": 0.002521,
-          "num__spl__latitude_sp_5": 0.000000,
-          "building_id": 19350,
-          "num__pol__total_area ceiling_height": 157.206001,
-          "num__spl__latitude_sp_0": 0.000464,
-          "num__spl__latitude_sp_4": 0.008655,
-          "num__spl__longitude_sp_1": 0.126068,
-          "floor": 9}'
+  -d '{"build_year": 2008,
+      "building_type_int": 4,
+      "latitude": 55.990021,
+      "longitude": 37.232895,
+      "ceiling_height": 2.65,
+      "flats_count": 107,
+      "floors_total": 14,
+      "has_elevator": true,
+      "floor": 9,
+      "kitchen_area": 9.3,
+      "living_area": 18.9,
+      "rooms": 1,
+      "is_apartment": false,
+      "total_area": 37.599998}'
 ```
 
 
@@ -57,16 +61,20 @@ curl -X 'POST' \
   'http://localhost:8081/api/flats/?flat_id=123' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{          "num__spl__latitude_sp_1": 0.196077,
-          "num__spl__longitude_sp_4": 0.002689,
-          "num__spl__longitude_sp_0": 0.002521,
-          "num__spl__latitude_sp_5": 0.000000,
-          "building_id": 19350,
-          "num__pol__total_area ceiling_height": 157.206001,
-          "num__spl__latitude_sp_0": 0.000464,
-          "num__spl__latitude_sp_4": 0.008655,
-          "num__spl__longitude_sp_1": 0.126068,
-          "floor": 9}'
+  -d '{"build_year": 2008,
+      "building_type_int": 4,
+      "latitude": 55.990021,
+      "longitude": 37.232895,
+      "ceiling_height": 2.65,
+      "flats_count": 107,
+      "floors_total": 14,
+      "has_elevator": true,
+      "floor": 9,
+      "kitchen_area": 9.3,
+      "living_area": 18.9,
+      "rooms": 1,
+      "is_apartment": false,
+      "total_area": 37.599998}'
 ```
 
 ## 3. Docker compose для микросервиса и системы моониторинга
@@ -85,16 +93,20 @@ curl -X 'POST' \
   'http://localhost:8081/api/flats/?flat_id=123' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{          "num__spl__latitude_sp_1": 0.196077,
-          "num__spl__longitude_sp_4": 0.002689,
-          "num__spl__longitude_sp_0": 0.002521,
-          "num__spl__latitude_sp_5": 0.000000,
-          "building_id": 19350,
-          "num__pol__total_area ceiling_height": 157.206001,
-          "num__spl__latitude_sp_0": 0.000464,
-          "num__spl__latitude_sp_4": 0.008655,
-          "num__spl__longitude_sp_1": 0.126068,
-          "floor": 9}'
+  -d '{"build_year": 2008,
+      "building_type_int": 4,
+      "latitude": 55.990021,
+      "longitude": 37.232895,
+      "ceiling_height": 2.65,
+      "flats_count": 107,
+      "floors_total": 14,
+      "has_elevator": true,
+      "floor": 9,
+      "kitchen_area": 9.3,
+      "living_area": 18.9,
+      "rooms": 1,
+      "is_apartment": false,
+      "total_area": 37.599998}'
 ```
 
 ## 4. Скрипт симуляции нагрузки
