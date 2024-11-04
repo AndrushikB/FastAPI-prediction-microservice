@@ -20,7 +20,7 @@ main_app_predictions = Histogram(
     # описание метрики
     "Histogram of predictions",
     # указываем корзины для гистограммы
-    buckets=(1000000, 5000000, 10000000, 15000000, 20000000)
+    buckets=(1e+06, 5e+06, 1e+07, 1.5e+07, 2e+07)
 ) 
 
 main_app_counter = Counter("main_app_counter", "count predictions")
